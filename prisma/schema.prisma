@@ -21,7 +21,10 @@ model User {
 model Post {
   id          String  @id @default(uuid())
   description String
-  filename    String?
+  filename    String? // This field is no longer needed
+  imageUrl    String? // New field to store image URL
   author      User    @relation(fields: [authorId], references: [id])
   authorId    String
+
+  // Additional fields or configurations as needed
 }
